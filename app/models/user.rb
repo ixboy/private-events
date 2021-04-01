@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  def index; end
+  def show
+    @user = User.find
+  end
 
   def new; end
 

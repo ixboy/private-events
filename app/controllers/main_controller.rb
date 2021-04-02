@@ -1,6 +1,5 @@
 class MainController < ApplicationController
   def index
-    flash.now[:notice] = 'logged in successfully...'
-    flash.now[:alert] = 'something happened'
+      @user = User.find_by(id: session[:user_id]) if session[:user_id]
   end
 end

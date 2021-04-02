@@ -4,7 +4,7 @@
 
 <% if @user %>
   <p> 
-    <%= @user.username%> is currently logged in.
+     logged in as: <%= @user.username%>
   </p>
-    <%= <%= button_to "Logout", logout_path, methd: :delete %>
-<% end%>
+    <%= button_to "Logout", logout_path, method: :delete %>
+<% end %>

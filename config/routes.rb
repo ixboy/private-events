@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   get "sign_in", to: 'sessions#new'
   post "sign_in", to: 'sessions#create'
-  root 'main#index'
+  root 'users#index'
 end

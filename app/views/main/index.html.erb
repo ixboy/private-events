@@ -2,9 +2,3 @@
   <h1>welcome to my events</h1>
 </div>
 
-<% if @user %>
-  <p> 
-     logged in as: <%= @user.username%>
-  </p>
-    <%= button_to "Logout", logout_path, method: :delete %>
-<% end %>

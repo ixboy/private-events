@@ -1,5 +1,12 @@
 <div class="col-md-6 col-md-offset-3">
-      <%= form_with(model: @event, local: true) do |f| %>
+    <%= form_with(model: @event, local: true) do |f| %>
+       <% if event.errors.any? %>
+    <div class="alert alert-danger">
+      <% event.errors.full_messages.each do |message| %>
+        <div> <%= message %> </div>
+      <% end %>
+    </div>
+  <%end%>
         <div class="field">
           <h4>Create New Event</h4>
         </div>
@@ -8,7 +15,7 @@
           <%= f.text_field :event_name, class: 'form-control' %>
         </div>
         <div class="field mt-4">
-          <%= f.text_area :desc, size: '20x10', placeholder: 'Event Description', class: 'form-control' %>
+          <%= f.text_area :description, size: '20x10', placeholder: 'Event Description', class: 'form-control' %>
         </div>
         <div class="field">
           <%= f.label :venue %>
@@ -24,7 +31,7 @@
       <% end %>
       <%
 =begin%>
- <%= link_to "<< Back to Profile", user_path(current_user.id), class: "mt-2" %> 
+ <%= link_to "<< Back to Profile", root_path(Current_user.id), class: "mt-2" %> 
 <%
 =end%>
     </div>

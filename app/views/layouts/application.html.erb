@@ -14,7 +14,9 @@
 
     <%= render partial: 'shared/navbar'%>
     <div class="container">
-      <%= render partial: 'shared/flash'%>
+    <% flash.each do |type, content| %>
+        <%= render 'shared/flash', type: type, content: content %>
+      <% end %>
       <%= yield %>
     </div>
 

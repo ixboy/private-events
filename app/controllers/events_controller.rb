@@ -3,13 +3,14 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @past_events = Event.past_events
+    @upcoming_events = Event.upcoming_events
   end
 
   def show
     @event = Event.find(params[:id])
-
   end
-  
+
   def new
     @event = Event.new
   end
@@ -27,7 +28,6 @@ class EventsController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
-
   end
 
   def destroy

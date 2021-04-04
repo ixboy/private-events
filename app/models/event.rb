@@ -7,14 +7,6 @@ class Event < ApplicationRecord
   has_many :invitations
   has_many :attendees, through: :invitations
 
-  #   scope :past_events, -> { where('event_date < ?', DateTime.now) }
-  #   scope :upcoming_events, -> { where('event_date > ?', DateTime.now) }
-
-  #   def self.find_upcoming_events
-  #     upcoming_events.order('created_at DESC').pluck(:title, :id)
-  #   end
-
-  #   def self.find_past_events
-  #     past_events.order('created_at DESC').pluck(:title, :id)
-  #   end
+  scope :past_events, -> { where('event_date < ?', DateTime.now).pluck(:event_name, :id) }
+  scope :upcoming_events, -> { where('event_date > ?', DateTime.now).pluck(:event_name, :id) }
 end

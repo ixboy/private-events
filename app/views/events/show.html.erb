@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
+ <%= link_to 'Edit', edit_event_path(@event) %> | 
+
 <%= link_to 'Back', events_path %>
 
 
@@ -11,17 +12,18 @@
       <div class="card-title h3">Event Title: <%= @event.event_name %></div>
       <hr>
       <div class="card-content"><%= @event.description %></div>
-      <div class="card-subtitle mr-4 mt-4">Creator:  <span class="ml-4">Event Date: <%= @event.event_date%></span> </div>
+      <div class="card-subtitle mr-4 mt-4">Creator: <%= @event.creator.username %></div <span class="ml-4">Event Date: <%= @event.event_date%></span> </div>
     </div>
-    <%
-=begin%>
- <%= new_invitation_button(@due) %> 
-<%
-=end%>
+
+ <%= new_invitation_button(@due) %>
+ 
+   
     <Button class="btn btn-info"><%= link_to "Back To User Profile", class: "text-white" %> </Button>
     <div class="invited-list p-2">
     <h4>Invited Members</h4>
-    <p></p>
+    <% @attendees.each do |attendee| %>
+    <p><%= attendee.username%></p>
+    <%end%>
     </div>
     </div>
   </div>

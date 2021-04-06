@@ -5,6 +5,7 @@
 
 import 'bootstrap'
 import "channels"
+import "../styles/application.scss"
 
 import * as ActiveStorage from "@rails/activestorage"
 
@@ -14,3 +15,6 @@ import Turbolinks from "turbolinks"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
+

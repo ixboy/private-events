@@ -1,0 +1,24 @@
+<div class="row">
+  <aside class="col-md-3">
+    <section class="user_info p-2">
+      <article>
+          <div>
+            <%= gravatar_for @user %>
+          </div>
+          <h1>
+            <%= @user.username %>
+          </h1>
+      </article>
+    </section>
+    <article class="current_user_events p-2">
+      <h5> My Personal Events </h5>
+      <% @current_user_event.each do |personal_event| %> 
+        <p><%= link_to personal_event.event_name, event_path(personal_event.id) %></p>
+      <% end %>
+    </article>
+  </aside>
+  <article class="event-form col-md-3 mt-4">
+    <h4>Events I will Be Attending</h4>
+    <%= my_attendance(@current_user_attendance) %>
+  </article>
+</div>

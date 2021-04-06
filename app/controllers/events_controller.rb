@@ -9,6 +9,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @attendees = Event.find(params[:id]).attendees.uniq
   end
 
   def new
@@ -16,7 +17,6 @@ class EventsController < ApplicationController
   end
 
   def create
-    # render plain: params[:event]
     @event = Current.user.events.build(event_params)
 
     respond_to do |format|

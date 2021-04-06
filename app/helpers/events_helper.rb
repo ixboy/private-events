@@ -26,6 +26,7 @@ module EventsHelper
       link_to 'Add New Invitation', new_invitation_url, class: 'text-white btn btn-warning'
     end
   end
+
   def display_errors
     render 'event_errors' if @event.errors.any?
   end

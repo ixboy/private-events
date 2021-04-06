@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :events
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :users
+  get '/events/:id/invitations/new', to: 'invitations#new', as: 'new_invitation'
+  post '/events/:id/invitations/new', to: 'invitations#create'
 
   get 'password', to: 'passwords#edit', as: :edit_password
   patch 'password', to: 'passwords#update'
@@ -9,5 +11,5 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   get 'sign_in', to: 'sessions#new'
   post 'sign_in', to: 'sessions#create'
-  root 'users#index'
+  root 'events#index'
 end

@@ -33,7 +33,7 @@ module ApplicationHelper
   end
 
   def navbar_my_event
-    link_to 'My Events', events_path, class: 'nav-link' if Current.user
+    link_to 'My Events', user_path(Current.user), class: 'nav-link' if Current.user
   end
 
   def navbar_home

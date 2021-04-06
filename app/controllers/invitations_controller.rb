@@ -11,7 +11,7 @@ class InvitationsController < ApplicationController
       invalid_email(attendee)
       return if attendee.nil?
       @invitation = @event.invitations.build(attendee_id: attendee.id)
-      redirect_to @event, notice: "#{attendee.username} has successfully been invited" if @invitation.save
+      redirect_to @event, flash: { success: "#{attendee.username} has successfully been invited" } if @invitation.save
     else
       flash[:error] = 'You must be signed in to invite members' 
       flash[:error] = 'You can only invite members to your own events' if !Current.user.nil?

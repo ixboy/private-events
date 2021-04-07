@@ -10,6 +10,9 @@ This project is a Private Events app. The idea is to create an app where the mem
 
 - Clone the repository: `git clone https://github.com/ixboy/private-events.git`
 - Move inside the folder: `cd private-events`
+- Make sure you have Ruby `2.7.2`
+- Run: `bundle install`
+- Run: `rails db:seed`
 - Run: `rails db:create` and `rails db:migrate`.
 - Run the server: `rails s` or `rails server`
 - To see the app on your local machine open your browser and type: `http://localhost:3000`. Have fun !!!

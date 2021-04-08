@@ -11,7 +11,7 @@ module UsersHelper
         current_user_attendance.map { |event| concat link_to event.event_name, event_path(event.id) }
       end
     else
-      'You do not have an event to attend yet'
+      'have no events to attend yet'
     end
   end
   def past_events(past_attendance)
@@ -20,7 +20,17 @@ module UsersHelper
         past_attendance.map { |event| concat link_to event.event_name, event_path(event.id) }
       end
     else
-      'You have not attended any event in the past'
+      'have not attended any event in the past'
+    end
+  end
+
+  def invitees(attendees)
+    if attendees.empty?
+      'No invited members'
+    else
+      content_tag :ul, class: 'd-flex flex-column' do
+        attendees.map { |attendee| concat link_to attendee.username, user_path(attendee.id) }
+      end
     end
   end
 end

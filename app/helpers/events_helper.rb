@@ -1,7 +1,7 @@
 module EventsHelper
   def list_past_events(events)
     if events.empty?
-      'There are no past events.'
+      'No past events.'
     else
       content_tag :ul, class: 'd-flex flex-column' do
         events.map { |event| concat link_to event[0], event_path(event[1]) }
@@ -11,7 +11,7 @@ module EventsHelper
 
   def list_upcoming_events(events)
     if events.empty?
-      'There are no upcoming events'
+      'No upcoming events'
     else
       content_tag :ul, class: 'd-flex flex-column' do
         events.map { |event| concat link_to event[0], event_path(event[1]) }

@@ -8,24 +8,19 @@
 <div class="container">
   <div class="row mx-auto">
     <div class="col-md-8">
-    <div class="card mt-4 mb-2 p-2">
-      <div class="card-title h3">Event Title: <%= @event.event_name %></div>
-      <hr>
-      <div class="card-content"><%= @event.description %></div>
-      <div class="card-subtitle mr-4 mt-4">Creator: <%= @event.creator.username %></div <span class="ml-4">Event Date: <%= @event.event_date%></span> </div>
-    </div>
+      <div class="card mt-4 mb-2 p-2">
+        <div class="card-title h3">Event Title: <%= @event.event_name %></div>
+        <hr>
+        <div class="card-content"><%= @event.description %></div>
+        <div class="card-subtitle mr-4 mt-4">Creator: <strong><%= @event.creator.username %></strong></div <span class="ml-4">Event Date: <%= @event.event_date%></span> </div>
+      </div>
 
- <%= new_invitation_button(@due) %>
- 
-   
-    <div class="invited-list p-2">
-    <h4>Invited Members</h4>
-    <% @attendees.each do |attendee| %>
-    <ul>
-    <li><%= attendee.username%></li>
-    </ul>
-    <%end%>
-    </div>
+       <%= new_invitation_button(@due) %>
+
+       <div class="invited-list p-2">
+         <h4>Invited Members</h4>
+         <%= invitees(@attendees) %>
+      </div>
     </div>
   </div>
 </div>

@@ -23,7 +23,7 @@ module EventsHelper
     if due
       ''
     else
-      link_to 'Add New Invitation', new_invitation_url, class: 'text-white btn btn-warning'
+      link_to 'Add New Invitation', new_invitation_url, class: 'text-white btn btn-primary'
     end
   end
 

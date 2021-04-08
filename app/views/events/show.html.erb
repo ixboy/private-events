@@ -18,11 +18,12 @@
  <%= new_invitation_button(@due) %>
  
    
-    <Button class="btn btn-info"><%= link_to "Back To User Profile", class: "text-white" %> </Button>
     <div class="invited-list p-2">
     <h4>Invited Members</h4>
     <% @attendees.each do |attendee| %>
-    <p><%= attendee.username%></p>
+    <ul>
+    <li><%= attendee.username%></li>
+    </ul>
     <%end%>
     </div>
     </div>

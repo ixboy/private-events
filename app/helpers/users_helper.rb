@@ -14,6 +14,7 @@ module UsersHelper
       'have no events to attend yet'
     end
   end
+
   def past_events(past_attendance)
     if past_attendance.any?
       content_tag :ul, class: 'd-flex flex-column' do

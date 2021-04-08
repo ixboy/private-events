@@ -3,9 +3,13 @@
 one:
   event_name: MyString
   event_date: 2021-04-03
-  descriptio: MyText
+  description: MyText
+  user_id: 1
+  venue: Luanda
 
 two:
   event_name: MyString
   event_date: 2021-04-03
-  descriptio: MyText
+  description: MyText
+  user_id: 2
+  venue: Angola

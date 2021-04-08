@@ -21,7 +21,7 @@ module UsersHelper
         past_attendance.map { |event| concat link_to event.event_name, event_path(event.id) }
       end
     else
-      'have not attended any event in the past'
+      'have no past events'
     end
   end
 

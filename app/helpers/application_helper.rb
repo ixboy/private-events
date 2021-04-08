@@ -37,10 +37,10 @@ module ApplicationHelper
   end
 
   def navbar_home
-    if Current.user
-      link_to 'Private Events', events_all_url, class: 'navbar-brand'
-    else
       link_to 'Private Events', root_url, class: 'navbar-brand'
-    end
+  end
+
+  def new_event
+      link_to "New Event", new_event_path, class:'btn btn-primary' if Current.user
   end
 end

@@ -71,6 +71,8 @@ group :test do
   gem 'guard-minitest', '~> 2.4', '>= 2.4.6'
   gem 'minitest', '~> 5.14', '>= 5.14.4'
   gem 'minitest-reporters', '~> 1.4', '>= 1.4.3'
+  gem 'shoulda-matchers'
+
 end
 
 group :production do
@@ -81,3 +83,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'rails_12factor', group: :production
+
+group :development, :test do
+  gem 'rspec-rails'
+end

@@ -18,7 +18,7 @@ RSpec.describe Event, type: :model do
         expect(event).to_not be_valid
     end
 
-      it 'has no venue and no description' do
+      it 'must have venue and description' do
     event = Event.new( 
         event_name: 'Festa', 
         venue: '', 

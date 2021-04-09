@@ -19,23 +19,10 @@ RSpec.describe User, type: :model do
     user = User.new(username: 'username', email: 'email@gmail.com', password: 'password').save
     expect(user).to eq(false)
   end
-  context 'associations' do
-  #   creator = User.first_or_create!(username: 'username', email: 'email@email.com', password: '123456789', password_confirmation: '123456789')
-  #   @event = creator.events.build(event_name: 'Festa', venue: 'City', event_date: '2021-04-02', description: 'festay')
+  describe 'associations' do
+    it { should have_many(:events).without_validating_presence }
 
-  #   it 'retrieves all the events created by a user' do
-  #     events = User.find_by(creator)
-  #     expect(events.all? { |event| event[0].is_a?(String) }).to be true
-  #     expect(events.all? { |event| event[1].is_a?(Integer) }).to be true
-  #   end
-
-  #   it 'retrieves all invitations a user has' do
-  #     @attendee = User.first_or_create!(username: 'name', email: 'email1@email.com', password: '123456789', password_confirmation: '123456789')
-  #     @festa = Event.create(event_name: 'Festa', venue: 'City', event_date: '2021-04-02', description: 'festa', user_id: @attendee.id)
-  #     @invitation = Invitation.create(attendee_id: @attendee.id, event_id: @festa.id)
-  #     invitations = User.find_invitations_by_user(@attendee)
-  #     expect(invitations.last).to equal(@festa.id)
-  #   end
+    it { should have_many(:invitations).with_foreign_key('attendee_id').without_validating_presence }
   end
 end
 

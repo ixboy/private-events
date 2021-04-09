@@ -38,7 +38,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # use sqlite3 as the database for ActiveRecords
-  gem "database_cleaner"
+  gem 'database_cleaner'
   gem 'sqlite3', '~> 1.4', '>= 1.4.2'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

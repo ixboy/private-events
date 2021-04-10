@@ -1,0 +1,30 @@
+<div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @event, local: true) do |f| %>
+    <%= render 'error_msgs' %>
+        <div class="field">
+          <h4>Create New Event</h4>
+        </div>
+        <div class="field">
+          <%= f.label :event_name %>
+          <%= f.text_field :event_name, class: 'form-control' %>
+        </div>
+        <div class="field mt-4">
+          <%= f.text_area :description, size: '20x10', placeholder: 'Event Description', class: 'form-control' %>
+        </div>
+        <div class="field">
+          <%= f.label :venue %>
+          <%= f.text_field :venue, class: 'form-control' %>
+        </div>
+        <div class="field mt-4">
+          <%= f.label :event_date, "Event Date" %>
+          <%= f.date_field :event_date, class: 'form-control' %>
+        </div>
+        <div class="field mt-4">
+          <%= f.submit "Create New Event", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    <%= link_to "<< Back to Profile", root_path ,class: "btn btn-primary mt-2" %> 
+    </div>
+  </div>
+  <br/>
+</div>

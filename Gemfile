@@ -23,7 +23,6 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -39,9 +38,11 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # use sqlite3 as the database for ActiveRecords
+  gem 'database_cleaner'
   gem 'sqlite3', '~> 1.4', '>= 1.4.2'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -70,13 +71,15 @@ group :test do
   gem 'guard-minitest', '~> 2.4', '>= 2.4.6'
   gem 'minitest', '~> 5.14', '>= 5.14.4'
   gem 'minitest-reporters', '~> 1.4', '>= 1.4.3'
+  gem 'shoulda-matchers'
+  gem 'simplecov', require: false
+  gem 'simplecov-rcov'
 end
 
 group :production do
   gem 'pg', '1.1.4'
+  gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-gem 'rails_12factor', group: :production

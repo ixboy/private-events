@@ -1,4 +1,3 @@
-
 User.create!(
   [
     { username: 'Alycia Rojas', email: 'alycia@gmail.com', password: '123456', password_confirmation: '123456' },

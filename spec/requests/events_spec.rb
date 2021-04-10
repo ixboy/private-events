@@ -1,25 +1,25 @@
 require 'rails_helper'
 
-RSpec.describe "Events", type: :request do
-  current_user = User.first_or_create!(username:'username', email: 'email@example.com', password: 'password', password_confirmation: 'password')
+RSpec.describe 'Events', type: :request do
+  current_user = User.first_or_create!(username: 'username', email: 'email@example.com', password: 'password',
+                                       password_confirmation: 'password')
 
   let(:valid_attributes) do
     {
-      event_name: 'Festa', 
-      venue: 'City', 
-      event_date: '2021-04-02', 
-      description: 'festa super grande', 
+      event_name: 'Festa',
+      venue: 'City',
+      event_date: '2021-04-02',
+      description: 'festa super grande',
       user_id: current_user.id
     }
-
   end
 
   let(:invalid_attributes) do
     {
       id: 'a',
-      event_name: 'Festa', 
-      venue: 'City', 
-      event_date: '2021-04-02', 
+      event_name: 'Festa',
+      venue: 'City',
+      event_date: '2021-04-02',
       description: 'festa super grande'
     }
   end

@@ -72,18 +72,12 @@ group :test do
   gem 'minitest', '~> 5.14', '>= 5.14.4'
   gem 'minitest-reporters', '~> 1.4', '>= 1.4.3'
   gem 'shoulda-matchers'
-
 end
 
 group :production do
   gem 'pg', '1.1.4'
+  gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-gem 'rails_12factor', group: :production
-
-group :development, :test do
-  gem 'rspec-rails'
-end

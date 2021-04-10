@@ -25,4 +25,3 @@ RSpec.describe User, type: :model do
     it { should have_many(:invitations).with_foreign_key('attendee_id').without_validating_presence }
   end
 end
-

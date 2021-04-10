@@ -72,6 +72,8 @@ group :test do
   gem 'minitest', '~> 5.14', '>= 5.14.4'
   gem 'minitest-reporters', '~> 1.4', '>= 1.4.3'
   gem 'shoulda-matchers'
+  gem 'simplecov', require: false
+  gem 'simplecov-rcov'
 end
 
 group :production do

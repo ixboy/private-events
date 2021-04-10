@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Users', type: :feature do
   background do
     @user = User.create(username: 'someone', email: 'exemple@example.com', password: 'serious',
-                password_confirmation: 'serious')
+                        password_confirmation: 'serious')
   end
 
   feature 'Users', type: :feature do

@@ -14,7 +14,7 @@ RSpec.feature 'Users', type: :feature do
       end
     end
     context 'Show page' do
-      scenario 'it redirets to a different page' do
+      scenario 'redirets to a different page' do
         visit root_path
         expect(page).to_not have_content 'My Personal Events'
       end

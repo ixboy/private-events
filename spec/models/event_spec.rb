@@ -12,9 +12,17 @@ RSpec.describe Event, type: :model do
       description: 'festa',
       user_id: current_user.id
     )
-
     expect(event).to be_valid
-    event.event_name = ''
+  end
+
+  it 'does not create an event' do
+    event = Event.new(
+      event_name: '',
+      venue: 'City',
+      event_date: '2021-04-02',
+      description: 'festa',
+      user_id: current_user.id
+    )
     expect(event).to_not be_valid
   end
 
@@ -26,9 +34,6 @@ RSpec.describe Event, type: :model do
       description: 'festa',
       user_id: current_user.id
     )
-
-    expect(event).to_not be_valid
-    event.description = ''
     expect(event).to_not be_valid
   end
 

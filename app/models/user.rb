@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 4 }, presence: true
   validates :password_confirmation, length: { minimum: 4 }, presence: true
 
-  has_many :events, class_name: 'Event', foreign_key: 'user_id', dependent: :destroy
+  has_many :events, dependent: :destroy
   has_many :invitations, foreign_key: 'attendee_id', dependent: :destroy
+  has_many :attended_events, through: :invitations
 end
